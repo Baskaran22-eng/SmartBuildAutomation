@@ -11,7 +11,7 @@ pipeline {
 
     post {
         always {
-            publishTestNGResults testResultsPattern: 'target/surefire-reports/testng-results.xml'
+            step([$class: 'Publisher', reportFilenamePattern: 'target/surefire-reports/testng-results.xml'])
         }
     }
 }
