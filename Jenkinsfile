@@ -1,5 +1,12 @@
 pipeline {
     agent any
+	
+	stage('Environment') {
+    steps {
+        bat 'java -version'
+        bat 'mvn -version'
+    }
+}
 
     stages {
         stage('Build') {
