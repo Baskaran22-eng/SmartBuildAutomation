@@ -8,4 +8,10 @@ pipeline {
             }
         }
     }
+
+    post {
+        always {
+            publishTestNGResults testResultsPattern: 'target/surefire-reports/testng-results.xml'
+        }
+    }
 }
